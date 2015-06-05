@@ -32,6 +32,7 @@ namespace TSJ.Gemini.Slack
                                         : null
             };
             var wc = new WebClient();
+            wc.Encoding = System.Text.Encoding.UTF8;
             wc.UploadString(new Uri(slackApiUrl),
                                 o.ToJson().Replace("\"_short\"", "\"short\""));
         }
